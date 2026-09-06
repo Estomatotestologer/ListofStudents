@@ -43,6 +43,7 @@ void end(Students* spisok, int col){
 	cout << "Завершение работы...Желаете ли сохранить изменения в файл (Y/N?): ";
 	cin >> choice;
 	if (choice == 'Y' || choice == 'y' || choice == 'У' || choice == 'у') saveFile(spisok, col);
+	else cout << "Завершение работы без сохранения файла\n";
 }
 
 int main(){
