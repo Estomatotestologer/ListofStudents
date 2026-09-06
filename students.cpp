@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include "definitions.h"
 #include "print.h"
@@ -8,18 +8,18 @@ void addStudent(Students* &spisok, int &col){
 	for (int i = 0; i < col; i++) {
 		add_spisok[i] = spisok[i];
 	}
-	cout << "Ââåäèòå ôàìèëèþ ñòóäåíòà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°: ";
 	cin >> add_spisok[col].secondName;
-	cout << "Ââåäèòå èìÿ ñòóäåíòà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°: ";
 	cin >> add_spisok[col].firstName;
-	cout << "Ââåäèòå ãðóïïó ñòóäåíòà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð³Ñ€ÑƒÐ¿Ð¿Ñƒ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°: ";
 	cin >> add_spisok[col].group;
-	cout << "Ââåäèòå îöåíêè ñòóäåíòà ÷åðåç ïðîáåë: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¾Ñ†ÐµÐ½ÐºÐ¸ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð° Ñ‡ÐµÑ€ÐµÐ· Ð¿Ñ€Ð¾Ð±ÐµÐ»: ";
 	for (int i = 0; i < N; i++) cin >> add_spisok[col].marks[i];
 	delete[] spisok;
 	spisok = add_spisok;
 	col++;
-	cout << endl << "Äîáàâëåí ñòóäåíò: \n";
+	cout << endl << "Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚: \n";
 	printStudent(spisok[col - 1]);
 }
 
@@ -36,18 +36,18 @@ void delCurrentStudent(int del_index, Students* &spisok, int& col) {
 
 void delStudent(Students* &spisok, int &col){
 	string studentSName;
-	cout << "Ââåäèòå ôàìèëèþ ñòóäåíòà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°: ";
 	cin >> studentSName;
 	char choice;
 	for (int i = 0; i < col; i++) {
 		if (studentSName == spisok[i].secondName) {
 			printStudent(spisok[i]);
-			cout << "Óäàëÿåì ñòóäåíòà (Y/N?): ";
+			cout << "Ð£Ð´Ð°Ð»ÑÐµÐ¼ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð° (Y/N?): ";
 			cin >> choice;
-			if (choice == 'y' || choice == 'Y' || choice == 'ó' || choice == 'Ó') {
+			if (choice == 'y' || choice == 'Y' || choice == 'Ñƒ' || choice == 'Ð£') {
 				delCurrentStudent(i, spisok, col);
 				i--;
-				cout << "Ñòóäåíò óäàëåí!\n\n";
+				cout << "Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚ ÑƒÐ´Ð°Ð»ÐµÐ½!\n\n";
 			}
 		}
 	}
@@ -55,7 +55,7 @@ void delStudent(Students* &spisok, int &col){
 
 void findStudent(Students* spisok, int col){
 	string studentSName;
-	cout << "Ââåäèòå ôàìèëèþ ñòóäåíòà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°: ";
 	cin >> studentSName;
 	int colStudents = 0;
 	for (int i = 0; i < col; i++) {
@@ -64,5 +64,5 @@ void findStudent(Students* spisok, int col){
 			colStudents++;
 		}
 	}
-	if (colStudents == 0) cout << "Ñòóäåíò ñ ôàìèëèåé " << studentSName << " íå íàéäåí!\n";
+	if (colStudents == 0) cout << "Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚ Ñ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÐµÐ¹ " << studentSName << " Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½!\n";
 }
