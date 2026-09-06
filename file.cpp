@@ -1,4 +1,4 @@
-#include "definitions.h"
+ï»¿#include "definitions.h"
 #include "print.h"
 #include <fstream>
 #include <iostream>
@@ -7,7 +7,7 @@ using namespace std;
 void saveFile(Students* spisok, int col){
 	ofstream output("data.txt");
 	if (!output.is_open()) {
-		cout << "Îøèáêà îòêðûòèÿ ôàéëà äëÿ çàïèñè\n";
+		cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð° Ð´Ð»Ñ Ð·Ð°Ð¿Ð¸ÑÐ¸\n";
 		system("pause");
 		return;
 	}
@@ -20,7 +20,7 @@ void saveFile(Students* spisok, int col){
 		output << "\n";
 	}
 	output.close();
-	cout << "Ôàéë ñîõðàíåí!\n";
+	cout << "Ð¤Ð°Ð¹Ð» ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½!\n";
 }
 
 void parsing(string stroka, Students& element) {
@@ -43,7 +43,7 @@ void parsing(string stroka, Students& element) {
 void loadFile(Students* &spisok, int &col){
 	ifstream load("data.txt");
 	if (!load.is_open()) {
-		cout << "Îøèáêà îòêðûòèÿ ôàéëà äëÿ çàãðóçêè\n";
+		cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð° Ð´Ð»Ñ Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ¸\n";
 		return;
 	}
 	int load_col;
@@ -58,7 +58,7 @@ void loadFile(Students* &spisok, int &col){
 	spisok = load_spisok;
 	col = load_col;
 	system("cls");
-	cout << "Ñïèñîê óñïåøíî çàãðóæåí èç ôàéëà: \n";
+	cout << "Ð¡Ð¿Ð¸ÑÐ¾Ðº ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð·Ð°Ð³Ñ€ÑƒÐ¶ÐµÐ½ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð°: \n";
 	for (int i = 0; i < col; i++) printStudent(load_spisok[i]);
 	
 }

@@ -1,10 +1,10 @@
-#include "definitions.h"
+ï»¿#include "definitions.h"
 #include <iostream>
 using namespace std;
 
 void printStudent(Students element) {
-	cout << element.secondName << " " << element.firstName << " " << "ãð." << element.group;
-	cout << endl << "Îöåíêè: ";
+	cout << element.secondName << " " << element.firstName << " " << "Ð³Ñ€." << element.group;
+	cout << endl << "ÐžÑ†ÐµÐ½ÐºÐ¸: ";
 	for (int i = 0; i < N; i++) cout << element.marks[i] << " ";
 	cout << endl;
 }
@@ -18,12 +18,12 @@ void printGoodStudents(Students* spisok, int col){
 			if (spisok[i].marks[j] == 5 || spisok[i].marks[j] == 4) exc_mark++;
 		}
 		if (exc_mark > 0.75 * N) {
-			if (colOfGood == 0) cout << "Ñïèñîê îòëè÷íèêîâ: \n";
+			if (colOfGood == 0) cout << "Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð¾Ñ‚Ð»Ð¸Ñ‡Ð½Ð¸ÐºÐ¾Ð²: \n";
 			printStudent(spisok[i]);
 			colOfGood++;
 		}
 	}
-	if (colOfGood == 0) cout << "Îòëè÷íèêè îòñóòñòâóþò! \n";
+	if (colOfGood == 0) cout << "ÐžÑ‚Ð»Ð¸Ñ‡Ð½Ð¸ÐºÐ¸ Ð¾Ñ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÑŽÑ‚! \n";
 }
 
 void printBadStudents(Students* spisok, int col){
@@ -35,12 +35,12 @@ void printBadStudents(Students* spisok, int col){
 			if (spisok[i].marks[j] == 2 || spisok[i].marks[j] == 3) bad_mark++;
 		}
 		if (bad_mark > 0.5 * N) {
-			if (colOfBad == 0) cout << "Ñïèñîê äâîå÷íèêîâ: \n";
+			if (colOfBad == 0) cout << "Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð´Ð²Ð¾ÐµÑ‡Ð½Ð¸ÐºÐ¾Ð²: \n";
 			printStudent(spisok[i]);
 			colOfBad++;
 		}
 	}
-	if (colOfBad == 0) cout << "Äâîå÷íèêè îòñóòñòâóþò! \n";
+	if (colOfBad == 0) cout << "Ð”Ð²Ð¾ÐµÑ‡Ð½Ð¸ÐºÐ¸ Ð¾Ñ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÑŽÑ‚! \n";
 }
 
 
@@ -59,14 +59,14 @@ void printSortSnameStudents(Students* spisok, int col){
 			}
 		}
 	}
-	cout << "Îòñîðòèðîâàííûé ïî ôàìèëèè ñïèñîê ñòóäåíòîâ: \n";
+	cout << "ÐžÑ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ð¿Ð¾ Ñ„Ð°Ð¼Ð¸Ð»Ð¸Ð¸ ÑÐ¿Ð¸ÑÐ¾Ðº ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð²: \n";
 	for (int i = 0; i < col; i++) printStudent(*bufSpisok[i]);
 	delete[] bufSpisok;
 }
 
 void printGrpStudents(Students* spisok, int col){
 	system("cls");
-	cout << "Ââåäèòå íàçâàíèå ãðóïïû ñòóäåíòîâ: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð²: ";
 	string grp;
 	cin >> grp;
 	int col_grp = 0;
@@ -74,7 +74,7 @@ void printGrpStudents(Students* spisok, int col){
 		if (grp == spisok[i].group) col_grp++;
 	}
 	if (col_grp == 0) {
-		cout << "Ãðóïïà íå íàéäåíà â ñïèñêå!\n";
+		cout << "Ð“Ñ€ÑƒÐ¿Ð¿Ð° Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð° Ð² ÑÐ¿Ð¸ÑÐºÐµ!\n";
 		return;
 	}
 	Students** list_grp = new Students * [col_grp];
@@ -90,7 +90,7 @@ void printGrpStudents(Students* spisok, int col){
 			}
 		}
 	}
-	cout << "Ñïèñîê ãðóïïû " << grp << ": \n";
+	cout << "Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹ " << grp << ": \n";
 	for (int i = 0; i < col_grp; i++) printStudent(*list_grp[i]);
 	delete[] list_grp;
 }
@@ -119,7 +119,7 @@ void printSortMidMarkStudents(Students* spisok, int col){
 			}
 		}
 	}
-	cout << "Ñïèñîê ñòóäåíòîâ, îòñîðòèðîâàííûé ïî ñðåäíåìó áàëëó: \n";
+	cout << "Ð¡Ð¿Ð¸ÑÐ¾Ðº ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð², Ð¾Ñ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ð¿Ð¾ ÑÑ€ÐµÐ´Ð½ÐµÐ¼Ñƒ Ð±Ð°Ð»Ð»Ñƒ: \n";
 	for (int i = 0; i < col; i++) printStudent(*list_grp[i]);
 	delete[] list_grp;
 }
